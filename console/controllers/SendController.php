@@ -21,25 +21,15 @@ class SendController extends Controller
         '2' => '',
         '3' => '69',
         '4' => '1',
-        '5' => '',
+        '5' => '0',
     ];
 
-	public function actionInit()
-	{
-        $arr = array($this->actionArrayUser());
-
-        foreach ($arr as  $name) {
-            for ($i = 0, $size = count($arr); $i < $size; ++$i) {
-                echo 'send ' . $name,PHP_EOL;
-            }
-        }
-	}
-
-	public function actionArrayUser()
+    public function actionSend()
     {
         foreach ($this->arrayUserMoney as $key => $value) {
-            if (!empty($value)){
-                return $this->arrayUser[$key];
+            if (!empty($value) && $value !== 0){
+                $arr = $this->arrayUser[$key];
+                echo 'send money: ' . $arr,PHP_EOL;
             }
         }
     }
