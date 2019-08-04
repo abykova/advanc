@@ -33,6 +33,10 @@ return [
                 ],
             ],
         ],
+		'admin' => [
+//			'class' => (new app\modules\admin\commands\SendController)->init(),
+			'class' => 'app\modules\admin\commands\SendController',
+		],
     ],
 	'modules' => [
 		'admin' => [

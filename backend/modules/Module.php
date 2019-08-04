@@ -4,6 +4,7 @@ namespace app\modules\admin;
 
 use yii\base\BootstrapInterface;
 use yii\base\Module as BaseModule;
+use yii\console\Application;
 
 /**
  * Модуль админки
@@ -28,11 +29,11 @@ class Module extends BaseModule implements BootstrapInterface
 	/**
 	 * Определяем параметры загрузки модуля
 	 *
-	 * @param \yii\console\Application $app
+	 * @param Application $app
 	 */
 	public function bootstrap($app)
 	{
-		if ($app instanceof \yii\console\Application) {
+		if ($app instanceof Application) {
 			$this->controllerNamespace = 'app\modules\admin\commands';
 		}
 	}
