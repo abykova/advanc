@@ -11,7 +11,6 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
     	'log',
-		'admin'
 		],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [
@@ -33,15 +32,6 @@ return [
                 ],
             ],
         ],
-		'admin' => [
-//			'class' => (new app\modules\admin\commands\SendController)->init(),
-			'class' => 'app\modules\admin\commands\SendController',
-		],
     ],
-	'modules' => [
-		'admin' => [
-			'class' => 'app\modules\admin\Module',
-		],
-	],
     'params' => $params,
 ];
