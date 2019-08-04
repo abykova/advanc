@@ -8,7 +8,7 @@ use yii\console\Controller;
  */
 class SendController extends Controller
 {
-    public $arrayUser = [
+    protected $arrayUser = [
         '1' => 'user one',
         '2' => 'user two',
         '3' => 'user three',
@@ -24,12 +24,16 @@ class SendController extends Controller
         '5' => '0',
     ];
 
+//    protected $amount = '100';
+//    protected $arrayAmount = [];
+//    gmp_sub((int)$this->amount,(int)$value);
+
     public function actionSend()
     {
         foreach ($this->arrayUserMoney as $key => $value) {
-            if (!empty($value) && $value !== 0){
-                $arr = $this->arrayUser[$key];
-                echo 'send money: ' . $arr,PHP_EOL;
+            if (!empty($value) && $value !== 0 ) {
+                $userName = $this->arrayUser[$key];
+                echo 'send money: ' . $value . ' ' . $userName,PHP_EOL;
             }
         }
     }
